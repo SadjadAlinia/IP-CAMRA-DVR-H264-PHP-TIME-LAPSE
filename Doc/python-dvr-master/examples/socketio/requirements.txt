@@ -1,0 +1,4 @@
+aiohttp==3.7.4
+python-socketio==4.4.0
+asyncio==3.4.3
+git+git://github.com/NeiroNx/python-dvr@master#egg=python-dvr

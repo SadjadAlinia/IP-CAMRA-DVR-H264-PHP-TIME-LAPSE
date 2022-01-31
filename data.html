@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <title>ipcamera</title>
+    <style>
+        body {
+            background: linear-gradient(90deg, #4b6cb7 0%, #182848 100%);
+        }
+
+        .main {
+            background-color: gray;
+            border-radius: 5%;
+        }
+
+        .chanel {
+            padding: 5px;
+            border-radius: 10px;
+            background-color: #d1cbcb;
+            margin-bottom: 5px;
+        }
+
+        .chanel label {
+            padding-top: 8px;
+            color: black;
+        }
+
+        .rowcss {
+            background-color: #e2e2e2;
+            border-radius: 20px;
+        }
+
+        img {
+            border-radius: 20px;
+            margin: 5px;
+        }
+
+        .timeline {
+            background-color: #e2e2e2;
+            border-radius: 20px;
+            white-space: nowrap;
+            display: inline-block;
+            overflow: auto;
+            margin-top: 5px;
+            margin-left: -15px;
+        }
+
+        .timeline p {
+            display: inline-block;
+            white-space: nowrap;
+            overflow: auto;
+            color: black;
+            margin-top: 20px;
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+
+        .containercss {
+            margin-top: 5%;
+        }
+
+        .op {
+            border-radius: 10px;
+            background-color: #d1cbcb;
+            display: inline-block;
+            white-space: nowrap;
+            padding: 10px;
+            /* margin-bottom: 5px; */
+        }
+
+        .op button {
+            font-size: 20px;
+            color: white;
+            background-color: #2c60d8;
+        }
+
+        .op button:hover {
+            background-color: #05184e;
+        }
+
+        .op input {
+            background: #f2f2f2;
+            width: 60px;
+            border: 0;
+            border-radius: 5px;
+            padding-top: 5px;
+            padding-bottom: 5px;
+            padding-left: 10px;
+            box-sizing: border-box;
+            font-size: 14px;
+            text-align: center;
+        }
+
+        table {
+            text-align: center;
+            align-items: center;
+        }
+
+        .index {
+            border-radius: 10px;
+            background-color: #d1cbcb;
+            padding: 10px;
+            margin-bottom: 5px;
+        }
+
+        .index input {
+            background: #f2f2f2;
+            width: 100%;
+            border: 0;
+            border-radius: 5px;
+            padding-top: 5px;
+            padding-bottom: 5px;
+            padding-left: 10px;
+            box-sizing: border-box;
+            font-size: 14px;
+            text-align: center;
+        }
+
+        .index td{
+            width: 33%;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="container containercss">
+        <div class="row rowcss w-100">
+            <div class="col-md-3 align-self-end">
+                <div class="op w-100">
+                    <table class="w-100">
+                        <tr>
+                            <td>
+                                <button id="start" onclick="action(1)">start</button>
+                            </td>
+                            <td>
+
+                                <input type="number" id="speed" value="500">
+                            </td>
+                            <td>
+                                <button id="stop" onclick="action(0)">stop</button>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="chanel w-100">
+                    <table class="w-100">
+                        <tr>
+                            <td>
+                                <label for="ch1"> ch0</label>
+                                <input type="checkbox" class="radio" id="ch1" onclick="click_ch(1)" checked=1 />
+                            </td>
+                            <td>
+                                <label for="ch2"> ch1</label>
+                                <input type="checkbox" class="radio" id="ch2" onclick="click_ch(2)" />
+                            </td>
+                            <td>
+                                <label for="ch3"> ch2</label>
+                                <input type="checkbox" class="radio" id="ch3" onclick="click_ch(3)" />
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="index w-100">
+                    <table class="w-100">
+                        <tr>
+                            <td>
+                                <a>Index</a>
+                            </td>
+                            <td>
+                                <a id="max">0</a>
+                            </td>
+                            <td>
+                                <input type="number" id="number" value="0" onchange="numberChange()">
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <div class="col-md-9">
+                <img class="w-100 " id="img" src="1.jpg">
+            </div>
+        </div>
+        <div id="scrollmenu" class="w-100 timeline">
+            <p>001023</p>
+            <p>001023</p>
+            <p>001023</p>
+            <p>001023</p>
+            <p>001023</p>
+            <p>001023</p>
+            <p>001023</p>
+            <p>001023</p>
+            <p>001023</p>
+            <p>001023</p>
+            <p>001023</p>
+            <p>001023</p>
+            <p>001023</p>
+            <p>001023</p>
+            <p>001023</p>
+            <p>001023</p>
+            <p>001023</p>
+            <p>001023</p>
+            <p>001023</p>
+            <p>001023</p>
+            <p>001023</p>
+            <p>001023</p>
+            <p>001023</p>
+        </div>
+    </div>
+</body>
+
+<script>
+    var list = null;
+    var lastselect = 0;
+    var chanel = "ch0";
+    var stop = 1, scrull = 0;
+    var puse = 0;
+    var number = document.getElementById("number");
+
+    function click_ch(ch) {
+        var ch1 = document.getElementById("ch1");
+        var ch2 = document.getElementById("ch2");
+        var ch3 = document.getElementById("ch3");
+
+        if (ch == 1) {
+            ch2.checked = false;
+            ch3.checked = false;
+            chanel = "ch0";
+        }
+        if (ch == 2) {
+            ch1.checked = false;
+            ch3.checked = false;
+            chanel = "ch1";
+        }
+        if (ch == 3) {
+            ch1.checked = false;
+            ch2.checked = false;
+            chanel = "ch2";
+        }
+        scrull = 1;
+        puse = 1;
+        post_send("mode=gettime&chanel=" + chanel);
+    }
+
+    function click_time(id) {
+        try {
+            var time = document.getElementById("T" + lastselect);
+            time.style.background = '#e2e2e2';
+            time.style.color = 'black';
+        } catch {
+
+        }
+        post_send("mode=getimg&chanel=" + chanel + "&name=" + list[id] + "&id=" + id);
+    }
+
+    function UpdateTimeLine() {
+        st = lastselect - 10;
+        sp = lastselect + 10;
+
+        if (st < 0)
+            st = 0;
+        if (sp > list.length)
+            sp = list.length;
+
+        console.log("st:" + st + "sp:" + sp);
+        scrollmenu.innerHTML = "";
+        for (i = st; i < sp; i++) {
+            str = list[i];
+            name = str.substring(0, 4) + "/" + str.substring(4, 6) + "/" + str.substring(6, 8) + " " + str.substring(8, 10) + ":" + str.substring(10, 12) + ":" + str.substring(12, 14);
+            scrollmenu.innerHTML += "<p id=T" + i + " onclick=click_time(" + i + ") >" + i + ": " + name + "</p>";
+        }
+
+        time = document.getElementById("T" + lastselect);
+        time.style.background = 'black';
+        time.style.color = 'white';
+        time.scrollIntoView(true);
+
+        number.value = lastselect;
+    }
+
+    function post_send(post) {
+
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function () {
+            if (this.readyState == 4 && this.status == 200) {
+                try {
+                    var input = JSON.parse(this.responseText);
+                    if (input[0] == "img") {
+                        var img = document.getElementById("img");
+                        img.src = "data:image/png;base64, " + input[2];
+                        lastselect = parseInt(input[1]);
+
+                        if (stop == 0 && puse == 0) {
+                            speed = parseInt(document.getElementById('speed').value);
+                            if (speed < 100)
+                                speed = 100;
+                            if (speed > 3000)
+                                speed = 3000;
+                            document.getElementById('speed').value = speed;
+                            setTimeout(read, speed);
+                            number.value = lastselect;
+                        }
+                        else {
+                            UpdateTimeLine();
+                        }
+                    }
+                    if (input[0] == "settime") {
+                        puse = 0;
+                        var scrollmenu = document.getElementById("scrollmenu");
+                        list = input[1];
+                        document.getElementById("max").innerHTML = list.length - 1;
+                        click_time(lastselect);
+                        UpdateTimeLine();
+                    }
+
+                } catch (err) {
+                    console.log(err.massg);
+                }
+            }
+        };
+        xhttp.open("POST", window.location.href, true);
+        xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+        xhttp.send(post);
+    }
+
+    function read() {
+        i = lastselect + 1;
+        if (i < list.length) {
+            click_time(i);
+        } else
+            stop = 1;
+    }
+
+    function action(mode) {
+        scrull = 1;
+        if (mode == 1) {
+            stop = 0
+            speed = parseInt(document.getElementById('speed').value);
+            setTimeout(read, speed);
+        } else {
+            stop = 1;
+        }
+
+        UpdateTimeLine();
+    }
+
+    function numberChange() {
+        i = number.value;
+        if (i < 0)
+            i = 0;
+        if (i > list.length - 1)
+            i = list.length - 1;
+        number.value = i;
+        lastselect = i;
+        click_time(i);
+        // UpdateTimeLine();
+    }
+
+    post_send("mode=gettime&chanel=ch0");
+</script>
+
+</html>
